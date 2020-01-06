@@ -7,6 +7,11 @@
 # this software. It has been tested carefully, but it is not guaranteed for any particular
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
+#
+#TODO: CAMBIAR
+administrator.dashboard.form.lable.ratioJobWithXxxrequest = ratioJobWithXxxrequest
+administrator.dashboard.form.lable.ratioXxxWithXxx = ratioXxxWithXxx
+administrator.dashboard.form.lable.ratioAplicationsWithxxx = ratioAplicationsWithxxx
 
 administrator.dashboard.form.lable.sectorspercompany = Number of companies per sector
 administrator.dashboard.form.lable.sectorsperinvestor = Number of investors per sector
@@ -41,5 +46,7 @@ administrator.dashboard.form.lable.avgApplicationPerWorker = Average number of a
 administrator.dashboard.form.lable.daysApplicationsStatusPendingByDay = Numbers of Applications Pending
 administrator.dashboard.form.lable.daysApplicationsStatusAcceptedByDay = Numbers of Applications Accepted
 administrator.dashboard.form.lable.daysApplicationsStatusRejectedByDay = Numbers of Applications Rejected
+
+
 
 administrator.dashboard.form.button.return = Return

@@ -47,4 +47,8 @@ public class Dashboard implements Serializable {
 	List<String>				daysApplicationsStatusAcceptedByDay;
 	List<Integer>				numberApplicationsStatusRejectedByDay;
 	List<String>				daysApplicationsStatusRejectedByDay;
+	//TODO: Cambiar
+	Double						ratioJobWithXxxrequest;
+	Double						ratioXxxWithXxx;
+	Double						ratioAplicationsWithxxx;
 }
