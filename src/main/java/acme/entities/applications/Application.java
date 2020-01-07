@@ -68,7 +68,7 @@ public class Application extends DomainEntity {
 	private String				xxx;
 
 	//TODO: Cambiar
-	@Pattern(regexp = "((?=.*[a-zA-Z]){2,}(?=.*[0-9]{1,})(?=.*\\.{3,})){5,}.*")
+	@Pattern(regexp = "(((?=.*[a-zA-Z]){2,}(?=.*[0-9]{1,})(?=.*\\.{3,})){5,}.*)|(^$)")
 	private String				password;
 
 	//Relationships ---------------------------------------

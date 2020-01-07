@@ -50,7 +50,8 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert model != null;
 
 		request.unbind(entity, model, "referenceNumber", "statement", "skills", "qualifications", "job.id");
-
+		//TODO: Cambiar
+		request.unbind(entity, model, "XXXRequestResponse", "xxx", "password");
 	}
 
 	@Override
