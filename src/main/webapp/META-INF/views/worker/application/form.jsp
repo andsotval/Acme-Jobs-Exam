@@ -42,6 +42,7 @@
 			<acme:form-password
 					code="worker.application.form.label.password" 
 					path="password"/>
+      <acme:form-password code="worker.application.label.confirmation" path="confirmation"/>
 		</jstl:if>		
 	</jstl:if>			
   	
