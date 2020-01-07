@@ -11,6 +11,7 @@
 worker.application.form.label.XXXRequestResponse = Respuesta
 worker.application.form.label.xxx = xxx
 worker.application.form.label.password = Contraseña
+worker.application.label.confirmation = Confirmación
 
 worker.job.form.label.reference=Referencia
 worker.job.form.label.title=Título

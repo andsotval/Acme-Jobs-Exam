@@ -44,6 +44,8 @@
 			readonly="${1!=1}"
 			code="worker.application.form.label.password" 
 			path="password"/>
+			
+	<acme:form-password code="worker.application.label.confirmation" path="confirmation"/>
   	
   	<acme:form-submit 
   		test="${command == 'show'}" 

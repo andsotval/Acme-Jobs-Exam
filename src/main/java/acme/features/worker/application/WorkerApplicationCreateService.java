@@ -11,6 +11,7 @@ import acme.entities.applications.ApplicationStatus;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -52,6 +53,12 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		request.unbind(entity, model, "referenceNumber", "statement", "skills", "qualifications", "job.id");
 		//TODO: Cambiar
 		request.unbind(entity, model, "XXXRequestResponse", "xxx", "password");
+
+		if (request.isMethod(HttpMethod.GET)) {
+			model.setAttribute("confirmation", "");
+		} else {
+			request.transfer(model, "confirmation");
+		}
 	}
 
 	@Override
@@ -95,10 +102,18 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		assert errors != null;
 
+		boolean isMatching;
+		String password, confirmation;
+
 		String refNum = entity.getReferenceNumber();
 		int numApplications = this.repository.countApplicationsByRefNum(refNum);
 
 		errors.state(request, numApplications == 0, "referenceNumber", "worker.application.form.errors.referenceNumber.alreadyExists");
+
+		password = request.getModel().getString("password");
+		confirmation = request.getModel().getString("confirmation");
+		isMatching = password.equals(confirmation);
+		errors.state(request, isMatching, "confirmation", "anonymous.user-account.error.confirmation-no-match");
 	}
 
 	@Override
