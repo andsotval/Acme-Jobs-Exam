@@ -12,6 +12,8 @@ import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractCreateService;
 
+// TODO: Cambiar
+
 @Service
 public class EmployerXxxrequestCreateService implements AbstractCreateService<Employer, Xxxrequest> {
 
@@ -40,12 +42,19 @@ public class EmployerXxxrequestCreateService implements AbstractCreateService<Em
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "text", "xxx");
+		request.unbind(entity, model, "text", "xxx", "job.id");
 	}
 
 	@Override
 	public Xxxrequest instantiate(final Request<Xxxrequest> request) {
-		int jobId = request.getModel().getInteger("jobId");
+		assert request != null;
+
+		int jobId;
+		if (request.getModel().getInteger("jobId") != null) {
+			jobId = request.getModel().getInteger("jobId");
+		} else {
+			jobId = request.getModel().getInteger("job.id");
+		}
 
 		Job job = this.repository.findOneJobById(jobId);
 		Xxxrequest result = new Xxxrequest();
@@ -66,6 +75,11 @@ public class EmployerXxxrequestCreateService implements AbstractCreateService<Em
 	public void create(final Request<Xxxrequest> request, final Xxxrequest entity) {
 		assert request != null;
 		assert entity != null;
+
+		int jobId = request.getModel().getInteger("job.id");
+		Job job = this.repository.findOneJobById(jobId);
+
+		entity.setJob(job);
 
 		this.repository.save(entity);
 	}
