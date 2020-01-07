@@ -8,6 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+worker.application.form.label.XXXRequestResponse = Answer
+worker.application.form.label.xxx = xxx
+worker.application.form.label.password = Password
+
 worker.application.form.lable.job.employer.identity.fullName = Employer's full name
 worker.application.form.lable.job.title = Job Title
 

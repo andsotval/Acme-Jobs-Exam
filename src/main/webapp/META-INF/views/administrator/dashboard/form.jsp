@@ -363,6 +363,11 @@
 	<acme:form-textbox code="administrator.dashboard.form.lable.avgJobPerEmployer" path="avgJobPerEmployer" />
 	<acme:form-textbox code="administrator.dashboard.form.lable.avgApplicationPerEmployer" path="avgApplicationPerEmployer" />
 	<acme:form-textbox code="administrator.dashboard.form.lable.avgApplicationPerWorker" path="avgApplicationPerWorker" />
-
+	
+	<!-- //TODO: Cambiar -->
+	<acme:form-textbox code="administrator.dashboard.form.lable.ratioJobWithXxxrequest" path="ratioJobWithXxxrequest" />
+	<acme:form-textbox code="administrator.dashboard.form.lable.ratioXxxWithXxx" path="ratioXxxWithXxx" />
+	<acme:form-textbox code="administrator.dashboard.form.lable.ratioAplicationsWithxxx" path="ratioAplicationsWithxxx" />
+	
 	<acme:form-return code="administrator.dashboard.form.button.return" />
 </acme:form>

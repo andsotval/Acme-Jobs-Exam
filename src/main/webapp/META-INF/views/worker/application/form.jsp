@@ -28,6 +28,22 @@
 	<acme:form-textarea code="worker.application.form.lable.statement" path="statement"/>
 	<acme:form-textarea code="worker.application.form.lable.skills" path="skills"/>
 	<acme:form-textarea code="worker.application.form.lable.qualifications" path="qualifications"/>
+	
+	<!-- TODO -->
+	<acme:form-textarea 
+			readonly="${1!=1}"
+			code="worker.application.form.label.XXXRequestResponse" 
+			path="XXXRequestResponse"/>
+			
+	<acme:form-textbox 
+			readonly="${1!=1}"
+			code="worker.application.form.label.xxx" 
+			path="xxx"/>
+			
+	<acme:form-password
+			readonly="${1!=1}"
+			code="worker.application.form.label.password" 
+			path="password"/>
   	
   	<acme:form-submit 
   		test="${command == 'show'}" 

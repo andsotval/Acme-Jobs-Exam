@@ -67,4 +67,15 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select j.creationMoment,count(j) from Application j where j.status=acme.entities.applications.ApplicationStatus.REJECTED and j.creationMoment between ?1 and ?2 group by j.creationMoment")
 	Object[] numberApplicationsStatusRejectedByDay(Date from, Date to);
+
+	//TODO: Cambiar - Estan son las 3 queries del Dashboard
+
+	@Query("select 1.0*count(r)/(select count(j) from Job j) from Xxxrequest r")
+	Double ratioJobWithXxxrequest();
+
+	@Query("select 1.0*count(a)/(select count(r) from Xxxrequest r) from Application a where a.xxx != null or a.xxx != ''")
+	Double ratioXxxWithXxx();
+
+	@Query("select 1.0*count(a)/(select count(a2) from Application a2) from Application a where a.password != null or a.password != ''")
+	Double ratioAplicationsWithxxx();
 }
