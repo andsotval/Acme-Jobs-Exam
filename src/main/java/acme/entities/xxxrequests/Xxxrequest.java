@@ -22,7 +22,7 @@ public class Xxxrequest extends DomainEntity {
 
 	//Atributes ------------------------------------------
 	@NotBlank
-	//Todo: Cambiar
+	//Todo: Cambiar max
 	@Length(max = 10)
 	private String				text;
 

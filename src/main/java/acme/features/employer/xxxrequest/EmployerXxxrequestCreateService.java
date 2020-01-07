@@ -33,6 +33,7 @@ public class EmployerXxxrequestCreateService implements AbstractCreateService<Em
 		assert entity != null;
 		assert errors != null;
 
+		request.transfer(request.getModel(), "confirm");
 		request.bind(entity, errors);
 	}
 
@@ -42,6 +43,7 @@ public class EmployerXxxrequestCreateService implements AbstractCreateService<Em
 		assert entity != null;
 		assert model != null;
 
+		model.setAttribute("confirm", false);
 		request.unbind(entity, model, "text", "xxx", "job.id");
 	}
 
@@ -69,6 +71,11 @@ public class EmployerXxxrequestCreateService implements AbstractCreateService<Em
 		assert entity != null;
 		assert errors != null;
 
+		boolean confirmed;
+		if (!errors.hasErrors("confirm")) {
+			confirmed = request.getModel().getBoolean("confirm");
+			errors.state(request, confirmed, "confirm", "employer.xxxrequest.form.error.confirmation");
+		}
 	}
 
 	@Override

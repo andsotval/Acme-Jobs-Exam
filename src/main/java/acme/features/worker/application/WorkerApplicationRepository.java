@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.entities.applications.Application;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
+import acme.entities.xxxrequests.Xxxrequest;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -28,4 +29,7 @@ public interface WorkerApplicationRepository extends AbstractRepository {
 
 	@Query("select count(a) from Application a where a.referenceNumber = ?1")
 	int countApplicationsByRefNum(String refNum);
+
+	@Query("select x from Xxxrequest x where x.job.id = ?1")
+	Xxxrequest findOneXxxrequestByJobId(int jobId);
 }
