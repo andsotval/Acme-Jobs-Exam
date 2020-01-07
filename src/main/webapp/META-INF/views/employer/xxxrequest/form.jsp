@@ -4,9 +4,15 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="employer.Xxxrequest.form.label.text" path="text" placeholder="Text"/>
+	<acme:form-textarea code="employer.Xxxrequest.form.label.text" path="text" placeholder="Text"/>
 	<acme:form-textbox code="employer.Xxxrequest.form.label.xxx" path="xxx" placeholder="Text"/>
+		
+	<jstl:if test="${command == 'create'}">
+		<acme:form-checkbox code="employer.xxxrequest.form.label.confirm" path="confirm"/>
+	</jstl:if>
 	
+	<acme:form-hidden path="job.id"/>
+
 	<acme:form-submit 
 		test="${command == 'create'}"
 		code="employer.Xxxrequest.form.button.create" 

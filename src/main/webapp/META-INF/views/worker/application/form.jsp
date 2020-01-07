@@ -29,23 +29,22 @@
 	<acme:form-textarea code="worker.application.form.lable.skills" path="skills"/>
 	<acme:form-textarea code="worker.application.form.lable.qualifications" path="qualifications"/>
 	
-	<!-- TODO -->
-	<acme:form-textarea 
-			readonly="${1!=1}"
-			code="worker.application.form.label.XXXRequestResponse" 
-			path="XXXRequestResponse"/>
-			
-	<acme:form-textbox 
-			readonly="${1!=1}"
-			code="worker.application.form.label.xxx" 
-			path="xxx"/>
-			
-	<acme:form-password
-			readonly="${1!=1}"
-			code="worker.application.form.label.password" 
-			path="password"/>
-			
-	<acme:form-password code="worker.application.label.confirmation" path="confirmation"/>
+
+	<jstl:if test="${hasXxxrequest}">
+		<acme:form-textarea 
+				code="worker.application.form.label.XXXRequestResponse" 
+				path="XXXRequestResponse"/>
+				
+		<acme:form-textbox 
+				code="worker.application.form.label.xxx" 
+				path="xxx"/>
+		<jstl:if test="${command == 'create'}">		
+			<acme:form-password
+					code="worker.application.form.label.password" 
+					path="password"/>
+      <acme:form-password code="worker.application.label.confirmation" path="confirmation"/>
+		</jstl:if>		
+	</jstl:if>			
   	
   	<acme:form-submit 
   		test="${command == 'show'}" 

@@ -11,6 +11,8 @@ import acme.framework.components.Request;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
+// TODO: Cambiar
+
 @Service
 public class EmployerJobShowService implements AbstractShowService<Employer, Job> {
 
@@ -43,9 +45,14 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		assert entity != null;
 		assert model != null;
 
+		int jobId = request.getModel().getInteger("jobId");
+
+		boolean hasXxxrequest = this.repository.findXxxrequestByJobId(jobId) != null;
+
+		model.setAttribute("hasXxxrequest", hasXxxrequest);
+
 		request.unbind(entity, model, "reference", "title", "deadline");
 		request.unbind(entity, model, "salary", "moreInfo", "description", "finalMode");
-
 	}
 
 	@Override

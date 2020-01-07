@@ -12,6 +12,8 @@ import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractCreateService;
 
+// TODO: Cambiar
+
 @Service
 public class EmployerXxxrequestCreateService implements AbstractCreateService<Employer, Xxxrequest> {
 
@@ -31,6 +33,7 @@ public class EmployerXxxrequestCreateService implements AbstractCreateService<Em
 		assert entity != null;
 		assert errors != null;
 
+		request.transfer(request.getModel(), "confirm");
 		request.bind(entity, errors);
 	}
 
@@ -40,12 +43,20 @@ public class EmployerXxxrequestCreateService implements AbstractCreateService<Em
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "text", "xxx");
+		model.setAttribute("confirm", false);
+		request.unbind(entity, model, "text", "xxx", "job.id");
 	}
 
 	@Override
 	public Xxxrequest instantiate(final Request<Xxxrequest> request) {
-		int jobId = request.getModel().getInteger("jobId");
+		assert request != null;
+
+		int jobId;
+		if (request.getModel().getInteger("jobId") != null) {
+			jobId = request.getModel().getInteger("jobId");
+		} else {
+			jobId = request.getModel().getInteger("job.id");
+		}
 
 		Job job = this.repository.findOneJobById(jobId);
 		Xxxrequest result = new Xxxrequest();
@@ -60,12 +71,22 @@ public class EmployerXxxrequestCreateService implements AbstractCreateService<Em
 		assert entity != null;
 		assert errors != null;
 
+		boolean confirmed;
+		if (!errors.hasErrors("confirm")) {
+			confirmed = request.getModel().getBoolean("confirm");
+			errors.state(request, confirmed, "confirm", "employer.xxxrequest.form.error.confirmation");
+		}
 	}
 
 	@Override
 	public void create(final Request<Xxxrequest> request, final Xxxrequest entity) {
 		assert request != null;
 		assert entity != null;
+
+		int jobId = request.getModel().getInteger("job.id");
+		Job job = this.repository.findOneJobById(jobId);
+
+		entity.setJob(job);
 
 		this.repository.save(entity);
 	}
