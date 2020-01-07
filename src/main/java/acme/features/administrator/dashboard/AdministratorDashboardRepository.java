@@ -73,7 +73,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select 1.0*count(r)/(select count(j) from Job j) from Xxxrequest r")
 	Double ratioJobWithXxxrequest();
 
-	@Query("select 1.0*count(a)/(select count(r) from Xxxrequest r) from Application a where a.xxx != null or a.xxx != ''")
+	@Query("select 1.0*count(a)/(select count(a2) from Application a2 where a2.XXXRequestResponse != null or a2.XXXRequestResponse != '') from Application a where a.xxx != null or a.xxx != ''")
 	Double ratioXxxWithXxx();
 
 	@Query("select 1.0*count(a)/(select count(a2) from Application a2) from Application a where a.password != null or a.password != ''")

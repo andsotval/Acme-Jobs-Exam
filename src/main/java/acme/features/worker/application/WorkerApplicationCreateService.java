@@ -43,14 +43,21 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		return result;
 	}
 
+	//TODO: Cambiar
 	@Override
 	public void unbind(final Request<Application> request, final Application entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
+		Integer jobId = request.getModel().getInteger("id");
+		if (jobId == null) {
+			jobId = request.getModel().getInteger("job.id");
+		}
+		boolean hasXxxrequest = this.repository.findOneXxxrequestByJobId(jobId) != null;
+		model.setAttribute("hasXxxrequest", hasXxxrequest);
+
 		request.unbind(entity, model, "referenceNumber", "statement", "skills", "qualifications", "job.id");
-		//TODO: Cambiar
 		request.unbind(entity, model, "XXXRequestResponse", "xxx", "password");
 	}
 
@@ -75,13 +82,12 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		}
 		Job job = this.repository.findOneJobById(id);
 
-		result.setJob(job);
-
 		Principal principal = request.getPrincipal();
 		Worker worker;
 
 		worker = this.repository.findWorkerById(principal.getActiveRoleId());
 
+		result.setJob(job);
 		result.setSkills(worker.getSkills());
 		result.setQualifications(worker.getQualifications());
 		result.setWorker(worker);
@@ -99,6 +105,12 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		int numApplications = this.repository.countApplicationsByRefNum(refNum);
 
 		errors.state(request, numApplications == 0, "referenceNumber", "worker.application.form.errors.referenceNumber.alreadyExists");
+
+		boolean hasXxxrequest = this.repository.findOneXxxrequestByJobId(entity.getJob().getId()) != null;
+
+		if (hasXxxrequest) {
+			request.getModel().setAttribute("hasXxxrequest", true);
+		}
 	}
 
 	@Override
