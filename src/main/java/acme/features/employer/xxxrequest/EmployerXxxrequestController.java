@@ -12,6 +12,7 @@ import acme.entities.xxxrequests.Xxxrequest;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
+// TODO: Cambiar
 @Controller
 @RequestMapping("/employer/xxxrequest/")
 public class EmployerXxxrequestController extends AbstractController<Employer, Xxxrequest> {
@@ -22,15 +23,11 @@ public class EmployerXxxrequestController extends AbstractController<Employer, X
 	@Autowired
 	private EmployerXxxrequestCreateService	createService;
 
-	@Autowired
-	private EmployerXxxrequestDeleteService	deleteService;
-
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 
 }

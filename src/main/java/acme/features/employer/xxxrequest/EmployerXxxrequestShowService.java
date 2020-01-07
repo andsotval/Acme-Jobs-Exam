@@ -12,6 +12,8 @@ import acme.framework.components.Request;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
+// TODO: Cambiar
+
 @Service
 public class EmployerXxxrequestShowService implements AbstractShowService<Employer, Xxxrequest> {
 
@@ -44,7 +46,7 @@ public class EmployerXxxrequestShowService implements AbstractShowService<Employ
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "text", "xxx");
+		request.unbind(entity, model, "text", "xxx", "job");
 	}
 
 	@Override
@@ -55,8 +57,8 @@ public class EmployerXxxrequestShowService implements AbstractShowService<Employ
 
 		int id;
 
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		id = request.getModel().getInteger("jobId");
+		result = this.repository.findOneXxxrequestByJobId(id);
 
 		return result;
 	}

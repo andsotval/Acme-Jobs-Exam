@@ -4,8 +4,9 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="employer.Xxxrequest.form.label.text" path="text" placeholder="Text"/>
+	<acme:form-textarea code="employer.Xxxrequest.form.label.text" path="text" placeholder="Text"/>
 	<acme:form-textbox code="employer.Xxxrequest.form.label.xxx" path="xxx" placeholder="Text"/>
+	<acme:form-hidden path="job.id"/>
 	
 	<acme:form-submit 
 		test="${command == 'create'}"
