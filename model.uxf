@@ -528,7 +528,7 @@ Job
 --
 +reference: String
 +title: String
-+deadline: Date{Temporal(TIMESTAMP),NotNul}
++deadline: Date{Temporal(TIMESTAMP),NotNull}
 +description: String{NotBlank}
 +employer: Employer
 +finalMode: boolean
@@ -541,7 +541,7 @@ Job
       <x>477</x>
       <y>828</y>
       <w>225</w>
-      <h>108</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Duty
@@ -600,7 +600,7 @@ Worker
       <x>1224</x>
       <y>828</y>
       <w>225</w>
-      <h>153</h>
+      <h>162</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Application
@@ -612,7 +612,7 @@ Application
 +qualifications: String{NotBlank}
 +XXXRequestResponse: String
 +xxx: String
-</panel_attributes>
++password: String{Pattern()}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -907,17 +907,16 @@ Registered by &gt;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1107</x>
-      <y>702</y>
+      <x>1098</x>
+      <y>729</y>
       <w>225</w>
-      <h>108</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 XXXRequest
 --
 +text: String{NotBlank,Max(value=XX)}
 +xxx: String{URL}
-+password: String{NotBlank,Pattern()}
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -926,7 +925,7 @@ XXXRequest
     <coordinates>
       <x>981</x>
       <y>747</y>
-      <w>144</w>
+      <w>135</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
@@ -936,6 +935,6 @@ m2=0..1
 
 &lt; has
 </panel_attributes>
-    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
   </element>
 </diagram>

@@ -55,10 +55,6 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
-    alter table `job` 
-       drop 
-       foreign key `FKeie53129vcegd5ciwck6jpb5c`;
-
     alter table `message` 
        drop 
        foreign key `FK3ny0h1379q528toyokq81noiu`;
@@ -94,6 +90,10 @@
     alter table `worker` 
        drop 
        foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
+
+    alter table `xxxrequest` 
+       drop 
+       foreign key `FK4c8n1u6mr15ucy5cqqbtfc6ih`;
 
     drop table if exists `administrator`;
 

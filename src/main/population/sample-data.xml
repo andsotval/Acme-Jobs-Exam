@@ -1074,7 +1074,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer3Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	<!-- Job14 -->	
@@ -1088,7 +1087,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="true"/>
 		<property name="employer" ref="employer1Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	<!-- Job13 -->	
@@ -1102,7 +1100,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer5Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	<!-- Job12 -->	
@@ -1116,7 +1113,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer4Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	<!-- Job11 -->	
@@ -1130,7 +1126,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="true"/>
 		<property name="employer" ref="employer4Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	<!-- Job10 -->	
@@ -1144,7 +1139,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer3Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	<!-- Job09 -->	
@@ -1158,7 +1152,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer2Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	<!-- Job08 -->	
@@ -1172,7 +1165,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="true"/>
 		<property name="employer" ref="employer6Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	<!-- Job07 -->	
@@ -1186,7 +1178,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer7Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	
@@ -1201,7 +1192,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer8Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	<!-- Job05 -->	
@@ -1215,7 +1205,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer8Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	<!-- Job04 -->	
@@ -1229,7 +1218,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer1Employer"/>
-		<property name="xxxRequest"><null/></property>
 	</bean>
 	
 	<!-- Job03 -->	
@@ -1243,7 +1231,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer3Employer"/>
-		<property name="xxxRequest" ref="XXXRequest03"/>
 	</bean>
 	
 	<!-- Job02 -->	
@@ -1257,10 +1244,9 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="true"/>
 		<property name="employer" ref="employer2Employer"/>
-		<property name="xxxRequest" ref="XXXRequest02"/>
 	</bean>
 	
-	<!-- Job01  //TODO: Cambiar TODOS-->	
+	<!-- Job01 -->	
 	
 	<bean id="job01" class="acme.entities.jobs.Job">
 		<property name="deadline" value="2022/11/1 10:00"/>
@@ -1271,7 +1257,6 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="true"/>
 		<property name="employer" ref="employer1Employer"/>
-		<property name="xxxRequest" ref="XXXRequest01"/>
 	</bean>
 	
 	<!-- Duty10 -->	
@@ -1352,7 +1337,7 @@
 		<property name="title" value="Title02"/>
 		<property name="description" value="description02"/>
 		<property name="percentageOfTime" value="50.0"/>
-		<property name="job" ref="job01"/>
+		<property name="job" ref="job02"/>
 	</bean>
 	
 	<!-- Duty01 -->	
@@ -1378,6 +1363,7 @@
 		<property name="job" ref="job01"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 16"/>
 		<property name="xxx" value="xxx 16"/>
+		<property name="password"><null/></property>
 	</bean>
 	
 	<!-- Application15 -->
@@ -1394,7 +1380,8 @@
 		<property name="job" ref="job01"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 15"/>
 		<property name="xxx" value="xxx 15"/>
-	</bean>
+		<property name="password"><null/></property>
+		</bean>
 	
 	<!-- Application14 -->
 	
@@ -1410,6 +1397,7 @@
 		<property name="job" ref="job01"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 14"/>
 		<property name="xxx" value="xxx 14"/>
+		<property name="password"><null/></property>
 	</bean>
 	
 	<!-- Application13 -->
@@ -1426,6 +1414,7 @@
 		<property name="job" ref="job01"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 13"/>
 		<property name="xxx" value="xxx 13"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application12 -->
@@ -1442,6 +1431,7 @@
 		<property name="job" ref="job01"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 12"/>
 		<property name="xxx" value="xxx 12"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application11 -->
@@ -1458,6 +1448,7 @@
 		<property name="job" ref="job01"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 11"/>
 		<property name="xxx" value="xxx 11"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application10 -->	
@@ -1474,6 +1465,7 @@
 		<property name="job" ref="job12"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 10"/>
 		<property name="xxx" value="xxx 10"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application09 -->	
@@ -1490,6 +1482,7 @@
 		<property name="job" ref="job12"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 9"/>
 		<property name="xxx" value="xxx 9"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application08 -->	
@@ -1506,6 +1499,7 @@
 		<property name="job" ref="job13"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 8"/>
 		<property name="xxx" value="xxx 8"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application07 -->	
@@ -1522,6 +1516,7 @@
 		<property name="job" ref="job08"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 7"/>
 		<property name="xxx" value="xxx 7"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application06 -->	
@@ -1538,6 +1533,7 @@
 		<property name="job" ref="job08"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 8"/>
 		<property name="xxx" value="xxx 8"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application05 -->	
@@ -1554,6 +1550,7 @@
 		<property name="job" ref="job14"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 5"/>
 		<property name="xxx" value="xxx 5"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application04 -->	
@@ -1570,6 +1567,7 @@
 		<property name="job" ref="job15"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 4"/>
 		<property name="xxx" value="xxx 4"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application03 -->	
@@ -1586,6 +1584,7 @@
 		<property name="job" ref="job03"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 3"/>
 		<property name="xxx" value="xxx 3"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application02 -->	
@@ -1602,6 +1601,7 @@
 		<property name="job" ref="job02"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 2"/>
 		<property name="xxx" value="xxx 2"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Application01 -->	
@@ -1618,6 +1618,7 @@
 		<property name="job" ref="job01"/>
 		<property name="XXXRequestResponse" value="XXXRequestResponse 1"/>
 		<property name="xxx" value="xxx 1"/>
+		<property name="password" value="AAA1."/>
 	</bean>
 	
 	<!-- Messagethread01 -->	
@@ -2089,19 +2090,19 @@
 	
 	<!-- XXXRequest //TODO: Cambiar TODOS -->
 	
-	<bean id="XXXRequest01" class="acme.entities.xxxrequests.XXXRequest">
+	<bean id="Xxxrequest01" class="acme.entities.xxxrequests.Xxxrequest">
 		<property name="text" value="Text 1"/>
 		<property name="xxx" value="https://sevius.us.es/"/>
-		<property name="password" value="Password"/>
+		<property name="job" ref="job01"/>
 	</bean>
-	<bean id="XXXRequest02" class="acme.entities.xxxrequests.XXXRequest">
+	<bean id="Xxxrequest02" class="acme.entities.xxxrequests.Xxxrequest">
 		<property name="text" value="Text 2"/>
 		<property name="xxx" value="https://sevius.us.es/"/>
-		<property name="password" value="Password"/>
+		<property name="job" ref="job02"/>
 	</bean>
-		<bean id="XXXRequest03" class="acme.entities.xxxrequests.XXXRequest">
+	<bean id="Xxxrequest03" class="acme.entities.xxxrequests.Xxxrequest">
 		<property name="text" value="Text 3"/>
 		<property name="xxx" value="https://sevius.us.es/"/>
-		<property name="password" value="Password"/>
+		<property name="job" ref="job03"/>
 	</bean>
 </beans>

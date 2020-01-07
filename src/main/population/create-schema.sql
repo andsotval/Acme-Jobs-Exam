@@ -29,6 +29,7 @@
         `xxxrequest_response` varchar(255),
         `creation_moment` datetime(6),
         `justification` varchar(255),
+        `password` varchar(255),
         `qualifications` varchar(255),
         `reference_number` varchar(255),
         `skills` varchar(255),
@@ -177,7 +178,6 @@
         `salary_currency` varchar(255),
         `title` varchar(255),
         `employer_id` integer not null,
-        `xxx_request_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -298,9 +298,9 @@
     create table `xxxrequest` (
        `id` integer not null,
         `version` integer not null,
-        `password` varchar(255),
         `text` varchar(255),
         `xxx` varchar(255),
+        `job_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -342,6 +342,9 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
+
+    alter table `xxxrequest` 
+       add constraint UK_9d7deulgljf13sueysh436fkd unique (`job_id`);
 
     alter table `administrator` 
        add constraint FK_2a5vcjo3stlfcwadosjfq49l1 
@@ -413,11 +416,6 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
        foreign key (`employer_id`) 
        references `employer` (`id`);
 
-    alter table `job` 
-       add constraint `FKeie53129vcegd5ciwck6jpb5c` 
-       foreign key (`xxx_request_id`) 
-       references `xxxrequest` (`id`);
-
     alter table `message` 
        add constraint `FK3ny0h1379q528toyokq81noiu` 
        foreign key (`authenticated_id`) 
@@ -462,3 +460,8 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
        add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `xxxrequest` 
+       add constraint `FK4c8n1u6mr15ucy5cqqbtfc6ih` 
+       foreign key (`job_id`) 
+       references `job` (`id`);

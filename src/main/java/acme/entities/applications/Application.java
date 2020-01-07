@@ -66,6 +66,10 @@ public class Application extends DomainEntity {
 	//TODO: Cambiar
 	private String				xxx;
 
+	//TODO: Cambiar
+	//	@Pattern(regexp = "([A-Z])\\w+")
+	private String				password;
+
 	//Relationships ---------------------------------------
 
 	@NotNull

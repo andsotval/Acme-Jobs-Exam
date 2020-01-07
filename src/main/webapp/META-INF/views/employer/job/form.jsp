@@ -35,6 +35,21 @@
 		method="get"
 		code="employer.job.duty.form.button.create" 
 		action="/employer/duty/create?job.id=${id}"/>
+		
+	<!-- CAMBIAR NOMBBRE------------------------------------------------------------------------->
+	<acme:form-submit 
+		test="${command != 'create' and finalMode == false}"
+		method="get"
+		code="employer.job.form.button.Xxxrequest.create" 
+		action="/employer/xxxrequest/create?jobId=${id}"/>
+		
+	<acme:form-submit
+  		method="get"
+  		test="${command != 'create' and finalMode == true}"
+		code="employer.job.form.button.Xxxrequest.show" 
+		action="/employer/Xxxrequest/show?jobId=${id}"/>
+	<!------------------------------------------------------------------------------------------->	
+	
   	<acme:form-submit
   		method="get"
   		test="${command != 'create'}"

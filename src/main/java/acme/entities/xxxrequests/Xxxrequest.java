@@ -2,12 +2,13 @@
 package acme.entities.xxxrequests;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.jobs.Job;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +16,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class XXXRequest extends DomainEntity {
+public class Xxxrequest extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
@@ -28,9 +29,8 @@ public class XXXRequest extends DomainEntity {
 	@URL
 	private String				xxx;
 
-	@NotBlank
-	//TODO: Cambiar
-	@Pattern(regexp = "([A-Z])\\w+")
-	private String				password;
+	//Relationships --------------------------------------
 
+	@OneToOne(optional = false)
+	private Job					job;
 }

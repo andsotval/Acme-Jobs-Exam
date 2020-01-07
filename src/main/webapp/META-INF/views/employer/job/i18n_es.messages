@@ -35,6 +35,12 @@ employer.job.form.button.update=Actualizar
 employer.job.form.button.delete=Borrar
 
 employer.job.duty.form.button.create= Crear tarea
+
+#######################################
+employer.job.form.button.Xxxrequest.create = Crear XXXrequest
+employer.job.form.button.Xxxrequest.show = Show XXXrequest
+#######################################
+
 employer.job.form.button.duty = Tareas
 employer.job.form.button.auditrecord = Registro de auditorias
 employer.job.form.button.return = Volver
