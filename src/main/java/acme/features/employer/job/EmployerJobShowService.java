@@ -45,11 +45,9 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		assert entity != null;
 		assert model != null;
 
-		int jobId = request.getModel().getInteger("jobId");
+		boolean hasWotela = this.repository.findWotelaByJobId(entity.getId()) != null;
 
-		boolean hasXxxrequest = this.repository.findXxxrequestByJobId(jobId) != null;
-
-		model.setAttribute("hasXxxrequest", hasXxxrequest);
+		model.setAttribute("hasWotela", hasWotela);
 
 		request.unbind(entity, model, "reference", "title", "deadline");
 		request.unbind(entity, model, "salary", "moreInfo", "description", "finalMode");

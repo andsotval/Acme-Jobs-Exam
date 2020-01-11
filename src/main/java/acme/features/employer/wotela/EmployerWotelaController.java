@@ -1,5 +1,5 @@
 
-package acme.features.employer.xxxrequest;
+package acme.features.employer.wotela;
 
 import javax.annotation.PostConstruct;
 
@@ -8,20 +8,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.roles.Employer;
-import acme.entities.xxxrequests.Xxxrequest;
+import acme.entities.wotelas.Wotela;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 // TODO: Cambiar
 @Controller
-@RequestMapping("/employer/xxxrequest/")
-public class EmployerXxxrequestController extends AbstractController<Employer, Xxxrequest> {
+@RequestMapping("/employer/wotela/")
+public class EmployerWotelaController extends AbstractController<Employer, Wotela> {
 
 	@Autowired
-	private EmployerXxxrequestShowService	showService;
+	private EmployerWotelaShowService	showService;
 
 	@Autowired
-	private EmployerXxxrequestCreateService	createService;
+	private EmployerWotelaCreateService	createService;
 
 
 	@PostConstruct

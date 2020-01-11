@@ -30,14 +30,14 @@
 	<acme:form-textarea code="worker.application.form.lable.qualifications" path="qualifications"/>
 	
 
-	<jstl:if test="${hasXxxrequest}">
+	<jstl:if test="${hasWotela}">
 		<acme:form-textarea 
-				code="worker.application.form.label.XXXRequestResponse" 
-				path="XXXRequestResponse"/>
+				code="worker.application.form.label.wotelaResponse" 
+				path="wotelaResponse"/>
 				
 		<acme:form-textbox 
-				code="worker.application.form.label.xxx" 
-				path="xxx"/>
+				code="worker.application.form.label.ticker" 
+				path="ticker"/>
 		<jstl:if test="${command == 'create'}">		
 			<acme:form-password
 					code="worker.application.form.label.password" 

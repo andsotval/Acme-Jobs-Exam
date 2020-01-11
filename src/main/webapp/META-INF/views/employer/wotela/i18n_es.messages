@@ -1,0 +1,8 @@
+employer.wotela.form.label.text = Texto
+employer.wotela.form.label.ticker = Ticker
+employer.wotela.form.label.confirm = Confirmar
+
+employer.wotela.form.error.confirmation = Debe confirmar
+
+employer.wotela.form.button.return = Volver
+employer.wotela.form.button.create = Crear

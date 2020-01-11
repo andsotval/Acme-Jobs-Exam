@@ -70,12 +70,13 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	//TODO: Cambiar - Estan son las 3 queries del Dashboard
 
-	@Query("select 1.0*count(r)/(select count(j) from Job j) from Xxxrequest r")
-	Double ratioJobWithXxxrequest();
+	@Query("select 1.0*count(r)/(select count(j) from Job j) from Wotela r")
+	Double ratioJobWithWotela();
 
-	@Query("select 1.0*count(a)/(select count(a2) from Application a2 where a2.XXXRequestResponse != null or a2.XXXRequestResponse != '') from Application a where a.xxx != null or a.xxx != ''")
-	Double ratioXxxWithXxx();
+	@Query("select 1.0*count(a)/(select count(a2) from Application a2 where a2.wotelaResponse != null or a2.wotelaResponse != '') from Application a where a.ticker != null or a.ticker != ''")
+	Double ratioWotelaWithTicker();
 
 	@Query("select 1.0*count(a)/(select count(a2) from Application a2) from Application a where a.password != null or a.password != ''")
-	Double ratioAplicationsWithxxx();
+	Double ratioAplicationsWithTicker();
+
 }

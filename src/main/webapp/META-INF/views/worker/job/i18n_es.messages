@@ -17,6 +17,7 @@ worker.job.form.label.description=Descripcion
 
 worker.job.form.button.employer=Empleado
 worker.job.form.button.duty=Duties
+worker.job.form.button.wotela=Wotela
 worker.job.form.button.auditrecord=Registros de auditorias
 
 worker.job.form.button.return = Volver

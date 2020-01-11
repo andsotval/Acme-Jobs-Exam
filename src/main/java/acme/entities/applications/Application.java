@@ -16,6 +16,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -61,14 +62,12 @@ public class Application extends DomainEntity {
 
 	private String				justification;
 
-	//TODO: Cambiar
-	private String				XXXRequestResponse;
+	private String				wotelaResponse;
 
-	//TODO: Cambiar
-	private String				xxx;
+	private String				ticker;
 
-	//TODO: Cambiar
-	@Pattern(regexp = "(((?=.*[a-zA-Z]){2,}(?=.*[0-9]{1,})(?=.*\\.{3,})){5,}.*)|(^$)")
+	@Pattern(regexp = "[(\\w|.,\\/#!$%\\^&\\*;:{}=\\-_`~()”“\"…]+")
+	@Size(min = 10)
 	private String				password;
 
 	//Relationships ---------------------------------------

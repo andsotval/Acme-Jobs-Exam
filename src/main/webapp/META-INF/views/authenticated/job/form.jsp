@@ -21,6 +21,10 @@
 		action="/authenticated/duty/list?id=${id}"/>
 	<acme:form-submit 
 		method="get" 
+		code="authenticated.job.form.button.wotela" 
+		action="/authenticated/wotela/show-by-job?id=${id}"/>
+	<acme:form-submit 
+		method="get" 
 		code="authenticated.job.form.button.auditrecord" 
 		action="/authenticated/auditrecord/list-by-job?id=${id}"/>
 	<acme:form-submit 

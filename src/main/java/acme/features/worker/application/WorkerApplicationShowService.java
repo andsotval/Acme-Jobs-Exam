@@ -48,7 +48,7 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		request.unbind(entity, model, "skills", "qualifications", "job.employer.identity.fullName");
 		request.unbind(entity, model, "job.title", "job");
 		//TODO: Cambiar
-		request.unbind(entity, model, "XXXRequestResponse", "xxx", "password");
+		request.unbind(entity, model, "wotelaResponse", "ticker", "password");
 
 	}
 

@@ -1,12 +1,12 @@
 
-package acme.features.employer.xxxrequest;
+package acme.features.employer.wotela;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
-import acme.entities.xxxrequests.Xxxrequest;
+import acme.entities.wotelas.Wotela;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -15,14 +15,14 @@ import acme.framework.services.AbstractShowService;
 // TODO: Cambiar
 
 @Service
-public class EmployerXxxrequestShowService implements AbstractShowService<Employer, Xxxrequest> {
+public class EmployerWotelaShowService implements AbstractShowService<Employer, Wotela> {
 
 	@Autowired
-	EmployerXxxrequestRepository repository;
+	EmployerWotelaRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<Xxxrequest> request) {
+	public boolean authorise(final Request<Wotela> request) {
 		assert request != null;
 
 		boolean result;
@@ -41,24 +41,24 @@ public class EmployerXxxrequestShowService implements AbstractShowService<Employ
 	}
 
 	@Override
-	public void unbind(final Request<Xxxrequest> request, final Xxxrequest entity, final Model model) {
+	public void unbind(final Request<Wotela> request, final Wotela entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "text", "xxx", "job");
+		request.unbind(entity, model, "text", "ticker", "job");
 	}
 
 	@Override
-	public Xxxrequest findOne(final Request<Xxxrequest> request) {
+	public Wotela findOne(final Request<Wotela> request) {
 		assert request != null;
 
-		Xxxrequest result;
+		Wotela result;
 
 		int id;
 
 		id = request.getModel().getInteger("jobId");
-		result = this.repository.findOneXxxrequestByJobId(id);
+		result = this.repository.findOneWotelaByJobId(id);
 
 		return result;
 	}

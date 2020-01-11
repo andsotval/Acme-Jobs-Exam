@@ -15,6 +15,7 @@ authenticated.job.form.label.description = Descripción
 #Buttons-------------------------------------------------------------------
 authenticated.job.form.button.employer = Empleador
 authenticated.job.form.button.duty = Tareas
+authenticated.job.form.button.wotela = Wotela
 authenticated.job.form.button.auditrecord = Registros de auditoria
 authenticated.job.form.button.return = Volver
 worker.job.form.button.apply = Aplicar

@@ -8,8 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-worker.application.form.label.XXXRequestResponse = Respuesta
-worker.application.form.label.xxx = xxx
+worker.application.form.label.wotelaResponse = Respuesta
+worker.application.form.label.ticker = Ticker
 worker.application.form.label.password = Contraseña
 worker.application.label.confirmation = Confirmación
 

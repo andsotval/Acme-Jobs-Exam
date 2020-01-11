@@ -1,12 +1,12 @@
 
-package acme.features.employer.xxxrequest;
+package acme.features.employer.wotela;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
-import acme.entities.xxxrequests.Xxxrequest;
+import acme.entities.wotelas.Wotela;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -15,20 +15,20 @@ import acme.framework.services.AbstractCreateService;
 // TODO: Cambiar
 
 @Service
-public class EmployerXxxrequestCreateService implements AbstractCreateService<Employer, Xxxrequest> {
+public class EmployerWotelaCreateService implements AbstractCreateService<Employer, Wotela> {
 
 	@Autowired
-	private EmployerXxxrequestRepository repository;
+	private EmployerWotelaRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<Xxxrequest> request) {
+	public boolean authorise(final Request<Wotela> request) {
 
 		return true;
 	}
 
 	@Override
-	public void bind(final Request<Xxxrequest> request, final Xxxrequest entity, final Errors errors) {
+	public void bind(final Request<Wotela> request, final Wotela entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -38,17 +38,17 @@ public class EmployerXxxrequestCreateService implements AbstractCreateService<Em
 	}
 
 	@Override
-	public void unbind(final Request<Xxxrequest> request, final Xxxrequest entity, final Model model) {
+	public void unbind(final Request<Wotela> request, final Wotela entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
 		model.setAttribute("confirm", false);
-		request.unbind(entity, model, "text", "xxx", "job.id");
+		request.unbind(entity, model, "text", "ticker", "job.id");
 	}
 
 	@Override
-	public Xxxrequest instantiate(final Request<Xxxrequest> request) {
+	public Wotela instantiate(final Request<Wotela> request) {
 		assert request != null;
 
 		int jobId;
@@ -59,14 +59,14 @@ public class EmployerXxxrequestCreateService implements AbstractCreateService<Em
 		}
 
 		Job job = this.repository.findOneJobById(jobId);
-		Xxxrequest result = new Xxxrequest();
+		Wotela result = new Wotela();
 		result.setJob(job);
 
 		return result;
 	}
 
 	@Override
-	public void validate(final Request<Xxxrequest> request, final Xxxrequest entity, final Errors errors) {
+	public void validate(final Request<Wotela> request, final Wotela entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -74,12 +74,12 @@ public class EmployerXxxrequestCreateService implements AbstractCreateService<Em
 		boolean confirmed;
 		if (!errors.hasErrors("confirm")) {
 			confirmed = request.getModel().getBoolean("confirm");
-			errors.state(request, confirmed, "confirm", "employer.xxxrequest.form.error.confirmation");
+			errors.state(request, confirmed, "confirm", "employer.wotela.form.error.confirmation");
 		}
 	}
 
 	@Override
-	public void create(final Request<Xxxrequest> request, final Xxxrequest entity) {
+	public void create(final Request<Wotela> request, final Wotela entity) {
 		assert request != null;
 		assert entity != null;
 

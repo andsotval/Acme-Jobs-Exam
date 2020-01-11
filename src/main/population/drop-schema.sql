@@ -91,9 +91,9 @@
        drop 
        foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
 
-    alter table `xxxrequest` 
+    alter table `wotela` 
        drop 
-       foreign key `FK4c8n1u6mr15ucy5cqqbtfc6ih`;
+       foreign key `FKqy1gvk4iytjjny4c7foyet90n`;
 
     drop table if exists `administrator`;
 
@@ -149,6 +149,6 @@
 
     drop table if exists `worker`;
 
-    drop table if exists `xxxrequest`;
+    drop table if exists `wotela`;
 
     drop table if exists `hibernate_sequence`;

@@ -38,16 +38,16 @@
 		
 	<!-- CAMBIAR NOMBBRE------------------------------------------------------------------------->
 	<acme:form-submit 
-		test="${command != 'create' and finalMode == false and hasXxxrequest == false}"
+		test="${command != 'create' and finalMode == false and hasWotela == false}"
 		method="get"
-		code="employer.job.form.button.Xxxrequest.create" 
-		action="/employer/xxxrequest/create?jobId=${id}"/>
+		code="employer.job.form.button.wotela.create" 
+		action="/employer/wotela/create?jobId=${id}"/>
 		
 	<acme:form-submit
   		method="get"
-  		test="${command != 'create' and hasXxxrequest == true}"
-		code="employer.job.form.button.Xxxrequest.show" 
-		action="/employer/xxxrequest/show?jobId=${id}"/>
+  		test="${command != 'create' and hasWotela == true}"
+		code="employer.job.form.button.wotela.show" 
+		action="/employer/wotela/show?jobId=${id}"/>
 	<!------------------------------------------------------------------------------------------->	
 	
   	<acme:form-submit

@@ -1,11 +1,11 @@
 
-package acme.entities.xxxrequests;
+package acme.entities.wotelas;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.jobs.Job;
@@ -16,18 +16,17 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Xxxrequest extends DomainEntity {
+public class Wotela extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	//Atributes ------------------------------------------
 	@NotBlank
-	//Todo: Cambiar max
-	@Length(max = 10)
+	@Size(max = 256)
 	private String				text;
 
 	@URL
-	private String				xxx;
+	private String				ticker;
 
 	//Relationships --------------------------------------
 

@@ -37,8 +37,8 @@ employer.job.form.button.delete=Delete
 employer.job.duty.form.button.create= Create duty
 
 #######################################
-employer.job.form.button.Xxxrequest.create = Create XXXrequest
-employer.job.form.button.Xxxrequest.show = show XXXrequest
+employer.job.form.button.wotela.create = Create wotela
+employer.job.form.button.wotela.show = show wotela
 #######################################
 
 employer.job.form.button.duty = Duties

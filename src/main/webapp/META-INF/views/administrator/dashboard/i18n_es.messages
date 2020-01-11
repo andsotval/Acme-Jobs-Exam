@@ -9,9 +9,9 @@
 # they accept any liabilities with respect to them.
 #
 #TODO: CAMBIAR
-administrator.dashboard.form.lable.ratioJobWithXxxrequest = ratioJobWithXxxrequest
-administrator.dashboard.form.lable.ratioXxxWithXxx = ratioXxxWithXxx
-administrator.dashboard.form.lable.ratioAplicationsWithxxx = ratioAplicationsWithxxx
+administrator.dashboard.form.lable.ratioJobWithWotela = ratioJobWithWotela
+administrator.dashboard.form.lable.ratioWotelaWithTicker = ratioWotelaWithTicker
+administrator.dashboard.form.lable.ratioAplicationsWithTickerAndPass = ratioAplicationsWithTickerAndPass
 
 administrator.dashboard.form.lable.sectorspercompany = Número de compañías por cada sector
 administrator.dashboard.form.lable.sectorsperinvestor = Número de inversores por cada sector

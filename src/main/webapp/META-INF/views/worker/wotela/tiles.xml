@@ -5,8 +5,8 @@
 
 <tiles-definitions>
 
-	<definition name="employer/xxxrequest/form" extends="master">		
-		<put-attribute name="body" type="template" value="../employer/xxxrequest/form.jsp" />
+	<definition name="worker/wotela/form" extends="master">		
+		<put-attribute name="body" type="template" value="../worker/wotela/form.jsp" />
 	</definition>
 
 </tiles-definitions>

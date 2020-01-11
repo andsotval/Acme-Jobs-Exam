@@ -55,11 +55,11 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		if (jobId == null) {
 			jobId = request.getModel().getInteger("job.id");
 		}
-		boolean hasXxxrequest = this.repository.findOneXxxrequestByJobId(jobId) != null;
-		model.setAttribute("hasXxxrequest", hasXxxrequest);
+		boolean hasWotela = this.repository.findOneWotelaByJobId(jobId) != null;
+		model.setAttribute("hasWotela", hasWotela);
 
 		request.unbind(entity, model, "referenceNumber", "statement", "skills", "qualifications", "job.id");
-		request.unbind(entity, model, "XXXRequestResponse", "xxx", "password");
+		request.unbind(entity, model, "wotelaResponse", "ticker", "password");
 
 		if (request.isMethod(HttpMethod.GET)) {
 			model.setAttribute("confirmation", "");
@@ -121,10 +121,10 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		isMatching = password.equals(confirmation);
 		errors.state(request, isMatching, "confirmation", "anonymous.user-account.error.confirmation-no-match");
 
-		boolean hasXxxrequest = this.repository.findOneXxxrequestByJobId(entity.getJob().getId()) != null;
+		boolean hasWotela = this.repository.findOneWotelaByJobId(entity.getJob().getId()) != null;
 
-		if (hasXxxrequest) {
-			request.getModel().setAttribute("hasXxxrequest", true);
+		if (hasWotela) {
+			request.getModel().setAttribute("hasWotela", true);
 		}
 	}
 

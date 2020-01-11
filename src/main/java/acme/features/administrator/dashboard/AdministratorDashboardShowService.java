@@ -46,7 +46,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		request.unbind(entity, model, "numberApplicationsStatusPendingByDay", "numberApplicationsStatusAcceptedByDay", "numberApplicationsStatusRejectedByDay");
 		request.unbind(entity, model, "daysApplicationsStatusPendingByDay", "daysApplicationsStatusAcceptedByDay", "daysApplicationsStatusRejectedByDay");
 		//TODO: Cambiar
-		request.unbind(entity, model, "ratioJobWithXxxrequest", "ratioXxxWithXxx", "ratioAplicationsWithxxx");
+		request.unbind(entity, model, "ratioJobWithWotela", "ratioWotelaWithTicker", "ratioAplicationsWithTickerAndPass");
 
 	}
 
@@ -58,9 +58,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		//TODO: Cambiar
 
-		result.setRatioJobWithXxxrequest(this.repository.ratioJobWithXxxrequest());
-		result.setRatioXxxWithXxx(this.repository.ratioXxxWithXxx());
-		result.setRatioAplicationsWithxxx(this.repository.ratioAplicationsWithxxx());
+		result.setRatioJobWithWotela(this.repository.ratioJobWithWotela());
+		result.setRatioWotelaWithTicker(this.repository.ratioWotelaWithTicker());
+		result.setRatioAplicationsWithTickerAndPass(this.repository.ratioAplicationsWithTicker());
 
 		result.setCountAnnouncement(this.repository.countAnnouncement());
 		result.setCountCompanyRecords(this.repository.countCompanyRecord());
